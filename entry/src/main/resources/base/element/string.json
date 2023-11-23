@@ -1,0 +1,62 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "module description"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "description"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "label"
+    },
+    {
+      "name": "home",
+      "value": "首页"
+    },
+    {
+      "name": "video",
+      "value": "视频"
+    },
+    {
+      "name": "mall",
+      "value": "商城"
+    },
+    {
+      "name": "mine",
+      "value": "我的"
+    },    {
+      "name": "recommend",
+      "value": "推荐"
+    },
+    {
+      "name": "discovery",
+      "value": "发现"
+    },
+    {
+      "name": "local",
+      "value": "本地"
+    },
+    {
+      "name": "hot",
+      "value": "热榜"
+    },    {
+      "name": "novel",
+      "value": "小说"
+    },
+    {
+      "name": "sports",
+      "value": "体育"
+    },
+    {
+      "name": "military",
+      "value": "军事"
+    },
+    {
+      "name": "entertain",
+      "value": "娱乐"
+    }
+  ]
+}

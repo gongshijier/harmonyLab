@@ -1,0 +1,41 @@
+{
+  "app": {
+    "signingConfigs": [
+      {
+        "name": "default",
+        "type": "HarmonyOS",
+        "material": {
+          "certpath": "/Users/gongshijie/.ohos/config/auto_debug_harmonylab_com.example.harmonylab_2850086000489893783.cer",
+          "storePassword": "0000001BB8C9E7B57F11105E61EE17D60571AD64563AE5D45982262E03B38B7F30E447E0D4C5659D3F58F6",
+          "keyAlias": "debugKey",
+          "keyPassword": "0000001B3C429564ACEA19A0FDFF4957474F4C3A1A78D2419BB0F3F07A71DEC78FC8EADFD793A68E326C7D",
+          "profile": "/Users/gongshijie/.ohos/config/auto_debug_harmonylab_com.example.harmonylab_2850086000489893783.p7b",
+          "signAlg": "SHA256withECDSA",
+          "storeFile": "/Users/gongshijie/.ohos/config/auto_debug_harmonylab_com.example.harmonylab_2850086000489893783.p12"
+        }
+      }
+    ],
+    "compileSdkVersion": 9,
+    "compatibleSdkVersion": 9,
+    "products": [
+      {
+        "name": "default",
+        "signingConfig": "default",
+      }
+    ]
+  },
+  "modules": [
+    {
+      "name": "entry",
+      "srcPath": "./entry",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
+    }
+  ]
+}
