@@ -22,6 +22,20 @@ export default class EntryAbility extends UIAbility {
       }
       hilog.info(0x0000, 'testTag', 'Succeeded in loading the content. Data: %{public}s', JSON.stringify(data) ?? '');
     });
+    windowStage.getMainWindow((err, data) => {
+      let sysBarProps = {
+        statusBarColor: '#eeeeee'
+      };
+      data.setWindowLayoutFullScreen(true)
+      data.setWindowSystemBarProperties(sysBarProps, (err) => {
+        if (err.code) {
+          console.error('Failed to set the system bar properties. Cause: ' + JSON.stringify(err));
+          return;
+        }
+        console.info('Succeeded in setting the system bar properties.');
+      });
+    })
+
   }
 
   onWindowStageDestroy() {

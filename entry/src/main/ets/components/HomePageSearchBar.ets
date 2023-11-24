@@ -23,7 +23,7 @@ export struct HomePageSearchBar {
 
   build() {
     Row() {
-      Image($r('app.media.ic_title'))
+      Image($r('app.media.ic_home_search'))
         .width(24)
         .height(24)
       TextInput({ placeholder: this.searchDefault })
@@ -48,7 +48,11 @@ export struct HomePageSearchBar {
           })
       }
     }
-    .width('100%')
+    .width('96%')
+    .margin({
+      top: 10,
+      bottom: 10
+    })
     .height(this.barHeight)
     .borderRadius(25)
     .padding({ left: 20, right: 20 })
@@ -74,10 +78,11 @@ export struct SearchBar {
         .margin({ left: 6, right: 12 })
         .onChange((value: string) => {
           this.keyword = value;
-        }).border({
-        width: 1,
-        color: Color.Gray
-      })
+        })
+        .border({
+          width: 1,
+          color: Color.Gray
+        })
         .height(40)
         .backgroundColor(Color.White)
         .onSubmit((enterKey: EnterKeyType) => {
@@ -95,7 +100,7 @@ export struct SearchBar {
     if (this.keyword != null && this.keyword as string && (this.keyword as string) != "") {
       router.pushUrl({ url: "pages/SearchResult", params: { keyword: this.keyword } })
     } else if (this.placeholder != null && this.placeholder as string && this.placeholder != $r("app.string.home")) {
-      router.pushUrl({ url: "pages/SearchResult", params: { keyword: this.placeholder }})
+      router.pushUrl({ url: "pages/SearchResult", params: { keyword: this.placeholder } })
     } else {
       promptAction.showToast({
         message: '关键字不能为空',

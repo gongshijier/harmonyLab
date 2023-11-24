@@ -1,6 +1,7 @@
 import hilog from '@ohos.hilog'
 import { PageConstants } from '../constant/PageConstants'
 import { StyleConstants } from '../constant/StyleConstants'
+import { Flavor } from '../feed/card/Flavor'
 import { TabInfo } from '../model/TabInfo'
 import { categoryTabs } from '../viewmodel/MainPage'
 import { FeedList } from './FeedList'
@@ -10,40 +11,23 @@ import { HomePageSearchBar } from './HomePageSearchBar'
 @Preview
 export struct Stream {
   private tag: string = "Stream"
+  @StorageLink("searchDefault") searchDefault: string = "王毅同新加坡外长通电话"
 
   build() {
     Column() {
-      HomePageSearchBar()
+      HomePageSearchBar({
+        barHeight: 44,
+        isShowHeatImg: false
+      })
       Tabs({
         barPosition: BarPosition.Start,
         index: 0
       }) {
-        TabContent() {
-          FeedList()
-        }.tabBar(this.CategoryTab(categoryTabs[0]))
-
-        TabContent() {
-
-        }.tabBar(this.CategoryTab(categoryTabs[1]))
-
-        TabContent() {
-
-        }.tabBar(this.CategoryTab(categoryTabs[2]))
-
-        TabContent() {
-        }.tabBar(this.CategoryTab(categoryTabs[3]))
-
-        TabContent() {
-        }.tabBar(this.CategoryTab(categoryTabs[4]))
-
-        TabContent() {
-        }.tabBar(this.CategoryTab(categoryTabs[5]))
-
-        TabContent() {
-        }.tabBar(this.CategoryTab(categoryTabs[6]))
-
-        TabContent() {
-        }.tabBar(this.CategoryTab(categoryTabs[7]))
+        ForEach(categoryTabs, (item, index) => {
+          TabContent() {
+            FeedList({ flavor: this.getFlavor('' + index) })
+          }.tabBar(this.CategoryTab(item))
+        })
       }
       .barWidth(StyleConstants.FULL_WIDTH)
       .barHeight($r('app.float.category_tab_strip_height'))
@@ -53,26 +37,50 @@ export struct Stream {
         hilog.info(0x00000, this.tag, "change tab ...")
       })
     }
+    .margin({
+      top: 30 //状态栏高度
+    })
     .width('100%')
     .height('100%')
-    .backgroundColor(Color.Green)
+    .backgroundColor(Color.White)
   }
 
+  /**
+   * get feed flavor by key
+   */
+  getFlavor(key: string): Flavor {
+    var flavor = new Flavor()
+    switch (key) {
+      case '1':
+        flavor.lanes = 2
+        break;
 
+      case '3':
+        flavor.lanes = 2
+        break;
+
+      default:
+        break;
+    }
+    return flavor
+  }
 
   @Builder CategoryTab(info: TabInfo) {
     Column({ space: PageConstants.BUTTON_SPACE }) {
       Text(info.title)
-        .fontColor($r('app.color.focus_color'))
+        .fontColor(Color.Black)
         .opacity(StyleConstants.FULL_OPACITY)
-        .fontWeight(StyleConstants.FONT_WEIGHT_FIVE)
+        .fontWeight(320)
         .textAlign(TextAlign.Center)
         .fontSize($r('app.float.category_tab_font_size'))
+
+      Divider()
+        .strokeWidth('0.4')
     }
     .width(StyleConstants.FULL_WIDTH)
     .height(StyleConstants.FULL_HEIGHT)
     .alignItems(HorizontalAlign.Center)
     .justifyContent(FlexAlign.Center)
-    .backgroundColor(Color.Black)
+    .backgroundColor(Color.White)
   }
 }

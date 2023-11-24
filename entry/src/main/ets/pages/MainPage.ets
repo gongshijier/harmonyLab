@@ -18,22 +18,11 @@ struct MainPage {
         barPosition: BarPosition.End,
         index: 0
       }) {
-        TabContent() {
-          Stream()
-        }.tabBar(this.BottomTab(buttonInfo[0]))
-
-        TabContent() {
-          Stream()
-        }.tabBar(this.BottomTab(buttonInfo[1]))
-
-        TabContent() {
-          Stream()
-        }.tabBar(this.BottomTab(buttonInfo[2]))
-
-        TabContent() {
-          Stream()
-        }.tabBar(this.BottomTab(buttonInfo[3]))
-
+        ForEach(buttonInfo, (item, index) => {
+          TabContent() {
+            Stream()
+          }.tabBar(this.BottomTab(item))
+        })
       }
       .barWidth(StyleConstants.FULL_WIDTH)
       .barHeight($r('app.float.vp_fifty_six'))
@@ -54,7 +43,7 @@ struct MainPage {
         .width($r('app.float.main_image_size'))
         .height($r('app.float.main_image_size'))
       Text(info.title)
-        .fontColor($r('app.color.focus_color'))
+        .fontColor(Color.Black)
         .opacity(StyleConstants.FULL_OPACITY)
         .fontWeight(StyleConstants.FONT_WEIGHT_FIVE)
         .textAlign(TextAlign.Center)
