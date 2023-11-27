@@ -5,7 +5,7 @@ import { Flavor } from '../feed/card/Flavor'
 import { TabInfo } from '../model/TabInfo'
 import { categoryTabs } from '../viewmodel/MainPage'
 import { FeedList } from './FeedList'
-import { HomePageSearchBar } from './HomePageSearchBar'
+import { StreamSearchBar } from './StreamSearchBar'
 
 @Component
 @Preview
@@ -15,7 +15,7 @@ export struct Stream {
 
   build() {
     Column() {
-      HomePageSearchBar({
+      StreamSearchBar({
         barHeight: 44,
         isShowHeatImg: false
       })
