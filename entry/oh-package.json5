@@ -6,5 +6,13 @@
   "description": "Please describe the basic information.",
   "main": "",
   "version": "1.0.0",
-  "dependencies": {}
+  "dependencies": {},
+  "deviceConfig": {
+    "default": {
+      "directLaunch": false,
+      "network": {
+        "cleartextTraffic": true
+      }
+    }
+  }
 }
