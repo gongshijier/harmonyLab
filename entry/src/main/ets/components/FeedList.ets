@@ -1,8 +1,12 @@
 import http from '@ohos.net.http'
+import Network from '@system.network'
 import { BigImageCard } from '../feed/card/BigImageCard'
 import { Flavor } from '../feed/card/Flavor'
 import { TextCard } from '../feed/card/TextCard'
+import { DBHelper } from '../feed/load/db/DBHelper'
+import { NetLoader } from '../feed/load/net/NetLoader'
 import { Cell, ViewType } from '../feed/model/Cell'
+import { NewCell } from '../feed/model/NewCell'
 import { FeedDataSource } from '../feed/source/FeedDataSource'
 
 @Component
@@ -11,30 +15,17 @@ export struct FeedList {
   private flavor: Flavor
 
   /**
-   * network case
+   * network load case
    */
   private clickNetwork = (event) => {
-    let httpRequest = http.createHttp();
-    httpRequest.request("http://apis.juhe.cn/simpleWeather/query?key=397c9db4cb0621ad0313123dab416668&city=深圳",
-      {
-        method: http.RequestMethod.GET,
-        header: {
-          'Content-Type': 'application/json'
-        },
-        readTimeout: 60000,
-        connectTimeout: 60000
-      }, (err, data) => {
-        if (!err) {
-          console.info('网络Result:' + data.result);
-          console.info('网络code:' + data.responseCode);
-          console.info('网络header:' + JSON.stringify(data.header));
-          console.info('网络cookies:' + data.cookies); // 8+
-          console.info('网络header.Content-Type:' + data.header['Content-Type']);
-          console.info('网络header.Status-Line:' + data.header['Status-Line']);
-        } else {
-          console.info('网络error:' + JSON.stringify(err));
-        }
-      });
+
+  }
+
+  /**
+   * db load case
+   */
+  longPressLoadDB() {
+
   }
 
   build() {
@@ -45,6 +36,16 @@ export struct FeedList {
             this.buildCard(item)
           }
           .onClick(this.clickNetwork)
+          .gesture(
+            // 绑定可以重复触发的LongPressGesture
+            LongPressGesture({ repeat: true })
+              .onAction((event: GestureEvent) => {
+                console.log('item long press: onAction');
+              })
+              .onActionEnd(() => {
+                this.longPressLoadDB()
+                console.log('item long press: onActionEnd');
+              }))
           .width('95%')
           .margin({ top: 16, left: 10, bottom: 10 })
         })

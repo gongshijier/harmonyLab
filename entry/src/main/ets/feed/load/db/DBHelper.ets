@@ -13,10 +13,10 @@ export class DBHelper {
   }
 
   public static getInstance(): DBHelper {
-    if (globalThis.instance == null) {
-      globalThis.instance = new DBHelper()
+    if (globalThis.dbInstance == null) {
+      globalThis.dbInstance = new DBHelper()
     }
-    return globalThis.instance
+    return globalThis.dbInstance
   }
 
   /**

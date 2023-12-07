@@ -38,42 +38,6 @@ const categoryTabs: TabInfo[] = [
     img: $r('app.media.ic_product_normal'),
     selectImg: $r('app.media.ic_product_focus'),
     title: $r('app.string.discovery')
-  },
-  {
-    index: 2,
-    img: $r('app.media.ic_cart_normal'),
-    selectImg: $r('app.media.ic_cart_focus'),
-    title: $r('app.string.local')
-  },
-  {
-    index: 3,
-    img: $r('app.media.ic_personal_normal'),
-    selectImg: $r('app.media.ic_personal_focus'),
-    title: $r('app.string.hot')
-  },
-  {
-    index: 4,
-    img: $r('app.media.ic_personal_normal'),
-    selectImg: $r('app.media.ic_personal_focus'),
-    title: $r('app.string.novel')
-  },
-  {
-    index: 5,
-    img: $r('app.media.ic_personal_normal'),
-    selectImg: $r('app.media.ic_personal_focus'),
-    title: $r('app.string.sports')
-  },
-  {
-    index: 6,
-    img: $r('app.media.ic_personal_normal'),
-    selectImg: $r('app.media.ic_personal_focus'),
-    title: $r('app.string.military')
-  },
-  {
-    index: 7,
-    img: $r('app.media.ic_personal_normal'),
-    selectImg: $r('app.media.ic_personal_focus'),
-    title: $r('app.string.entertain')
   }
 ]
 

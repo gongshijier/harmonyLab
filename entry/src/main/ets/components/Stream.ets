@@ -2,6 +2,8 @@ import hilog from '@ohos.hilog'
 import { PageConstants } from '../constant/PageConstants'
 import { StyleConstants } from '../constant/StyleConstants'
 import { Flavor } from '../feed/card/Flavor'
+import { DBHelper } from '../feed/load/db/DBHelper'
+import { NetLoader } from '../feed/load/net/NetLoader'
 import { TabInfo } from '../model/TabInfo'
 import { categoryTabs } from '../viewmodel/MainPage'
 import { FeedList } from './FeedList'
@@ -34,6 +36,12 @@ export struct Stream {
       .vertical(false)
       .scrollable(true)
       .onChange((index: number) => {
+        if (index == 0) {
+          NetLoader.load()
+        }
+        if (index == 1) {
+          DBHelper.getInstance()
+        }
         hilog.info(0x00000, this.tag, "change tab ...")
       })
     }

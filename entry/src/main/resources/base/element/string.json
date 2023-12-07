@@ -29,11 +29,11 @@
       "value": "我的"
     },    {
       "name": "recommend",
-      "value": "推荐"
+      "value": "数据库"
     },
     {
       "name": "discovery",
-      "value": "发现"
+      "value": "网络"
     },
     {
       "name": "local",
