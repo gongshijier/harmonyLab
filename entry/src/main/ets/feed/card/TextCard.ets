@@ -2,10 +2,11 @@
  * pure text card
  */
 import { Cell } from '../model/Cell'
+import { NewCell } from '../model/NewCell'
 
 @Component
 export struct TextCard {
-  cell: Cell
+  cell: NewCell
 
   build() {
     Column() {

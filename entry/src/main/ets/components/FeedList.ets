@@ -31,7 +31,7 @@ export struct FeedList {
   build() {
     Scroll() {
       List() {
-        LazyForEach(this.data, (item: Cell, index: number) => {
+        LazyForEach(this.data, (item: NewCell, index: number) => {
           ListItem() {
             this.buildCard(item)
           }
@@ -59,13 +59,11 @@ export struct FeedList {
     }.backgroundColor(Color.White)
   }
 
-  @Builder buildCard(item: Cell) {
-    if (this.flavor.lanes == 1 && item.viewType == ViewType.TEXT) {
-      TextCard({ cell: item })
-    } else if (item.viewType == ViewType.BIG_IMAGE) {
+  @Builder buildCard(item: NewCell) {
+    if (item.thumbnail_pic_s != null && item.thumbnail_pic_s.length != 0) {
       BigImageCard({ cell: item })
     } else {
-      BigImageCard({ cell: item })
+      TextCard({ cell: item })
     }
   }
 }

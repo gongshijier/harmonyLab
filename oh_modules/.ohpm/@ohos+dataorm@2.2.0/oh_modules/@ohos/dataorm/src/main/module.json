@@ -1,0 +1,21 @@
+{
+	"app": {
+		"bundleName": "cn.openharmony.dataorm",
+		"debug": true,
+		"versionCode": 1000000,
+		"versionName": "2.2.0",
+		"minAPIVersion": 9,
+		"targetAPIVersion": 10,
+		"apiReleaseType": "Beta2",
+		"compileSdkVersion": "4.0.9.6",
+		"compileSdkType": "OpenHarmony"
+	},
+	"module": {
+		"name": "dataORM",
+		"type": "har",
+		"deviceTypes": [
+			"default",
+			"tablet"
+		]
+	}
+}

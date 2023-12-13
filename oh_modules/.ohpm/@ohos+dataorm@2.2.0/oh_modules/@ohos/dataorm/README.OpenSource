@@ -1,0 +1,10 @@
+[
+    {
+        "Name": "greenrobot",
+        "License": "Apache License",
+        "Version Number": "3.3.0",
+        "Owner" : "greenrobot"
+        "Upstream URL": "https://github.com/greenrobot/greenDAO",
+        "Description": "greenDAO is a light & fast ORM solution for Android that maps objects to SQLite databases."
+    }
+]

@@ -1,0 +1,21 @@
+{
+	"app": {
+		"bundleName": "com.protobufjs",
+		"debug": true,
+		"versionCode": 1000000,
+		"versionName": "1.0.2",
+		"minAPIVersion": 9,
+		"targetAPIVersion": 10,
+		"apiReleaseType": "Beta2",
+		"compileSdkVersion": "4.0.9.6",
+		"compileSdkType": "OpenHarmony"
+	},
+	"module": {
+		"name": "protobufjs",
+		"type": "har",
+		"deviceTypes": [
+			"default",
+			"tablet"
+		]
+	}
+}

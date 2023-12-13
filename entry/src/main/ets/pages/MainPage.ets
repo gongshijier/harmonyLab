@@ -20,7 +20,9 @@ struct MainPage {
       }) {
         ForEach(buttonInfo, (item, index) => {
           TabContent() {
-            Stream()
+            if (index == 0) {
+              Stream()
+            }
           }.tabBar(this.BottomTab(item))
         })
       }

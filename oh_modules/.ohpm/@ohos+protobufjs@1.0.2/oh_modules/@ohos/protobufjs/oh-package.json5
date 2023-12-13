@@ -1,0 +1,26 @@
+{
+  "types": "",
+  "keywords": [
+    "OpenHarmony",
+    "HarmonyOS",
+    "protobufjs"
+  ],
+  "author": "ohos_tpc",
+  "description": "Its easy to use,blazingly fast and works out of the box with .proto files.",
+  "ohos": {
+    "org": "opensource"
+  },
+  "main": "index.ts",
+  "repository": "https://gitee.com/openharmony-tpc/protobuf",
+  "type": "module",
+  "version": "1.0.2",
+  "dependencies": {
+    "long": "5.2.1"
+  },
+  "tags": [
+    "Tool"
+  ],
+  "license": "Apache License 2.0",
+  "devDependencies": {},
+  "name": "@ohos/protobufjs"
+}

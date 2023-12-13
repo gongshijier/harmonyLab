@@ -1,8 +1,11 @@
 
+
 /**
  * new cell model
  */
-export interface NewCell {
+// @Entity('cell')
+export class NewCell {
+  id: number
   uniquekey: string
   title: string
   data: string

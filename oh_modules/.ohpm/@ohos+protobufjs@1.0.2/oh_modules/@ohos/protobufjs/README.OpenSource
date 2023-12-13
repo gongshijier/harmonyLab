@@ -1,0 +1,20 @@
+[
+    {
+        "Name": "protobufjs",
+        "License": "Apache-2.0",
+        "License File": "LICENSE",
+        "Version Number": "5.0.3",
+        "Owner" : "xiafeng@huawei.com"
+        "Upstream URL": "https://github.com/protobufjs/protobuf.js",
+        "Description": "protoubuf.js is a pure JavaScript implementation with TypeScript for node.js and the browser.Its easy to use,blazingly fast and works out of the box with .proto files "
+    },
+    {
+        "Name": "bytebuffer",
+        "License": "Apache-2.0",
+        "License File": "LICENSE",
+        "Version Number": "5.0.1",
+        "Owner" : "xiafeng@huawei.com"
+        "Upstream URL": "https://github.com/protobufjs/bytebuffer.js",
+        "Description": "A fast and complete ByteBuffer implementation using either ArrayBuffers in the browser or Buffers under node.js."
+    }
+]

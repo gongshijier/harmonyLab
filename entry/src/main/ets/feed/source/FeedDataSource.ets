@@ -1,10 +1,22 @@
+import ArrayList from '@ohos.util.ArrayList';
+import { NetLoader } from '../load/net/NetLoader';
 import { Cell, ViewType } from '../model/Cell';
+import { NewCell } from '../model/NewCell';
 import { BasicDataSource } from './BasicDataSource';
 
 /**
  * feed data
  */
 export class FeedDataSource extends BasicDataSource {
+  private cells: ArrayList<NewCell> = new ArrayList()
+
+  constructor() {
+    super();
+    NetLoader.load().then(res => {
+      this.cells = res
+      this.notifyDataReload()
+    })
+  }
 
   private testDataArray: Array<Cell> = [
     {
@@ -104,11 +116,11 @@ export class FeedDataSource extends BasicDataSource {
     }
   ]
 
-  public getData(index: number): Cell {
-    return this.testDataArray[index]
+  public getData(index: number): NewCell {
+    return this.cells[index]
   }
 
   public totalCount(): number {
-    return this.testDataArray.length
+    return this.cells.length
   }
 }

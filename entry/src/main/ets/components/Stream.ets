@@ -36,12 +36,6 @@ export struct Stream {
       .vertical(false)
       .scrollable(true)
       .onChange((index: number) => {
-        if (index == 0) {
-          NetLoader.load()
-        }
-        if (index == 1) {
-          DBHelper.getInstance()
-        }
         hilog.info(0x00000, this.tag, "change tab ...")
       })
     }
